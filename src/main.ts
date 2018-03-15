@@ -1,25 +1,26 @@
-let width : number | undefined = undefined
-let height: number | undefined = undefined
+import '../style/style'
+
+let canvas: HTMLCanvasElement | null = null
 
 window.onload = () => {
-    width  = window.innerWidth - 20
-    height = window.innerHeight - 20
+    canvas = <HTMLCanvasElement>document.getElementById('canvas')
+    canvas.width  = window.innerWidth - 20
+    canvas.height = window.innerHeight - 20
 
-    const canvas = <HTMLCanvasElement>document.getElementById('canvas')
-    canvas.width  = width
-    canvas.height = height
-
-    const gl  = canvas.getContext('webgl')
+    const gl = <WebGLRenderingContext>canvas.getContext('webgl')
     init(gl)
     window.requestAnimationFrame(animate(gl))
 }
 
 const init = (gl: WebGLRenderingContext) => {
-    
+    gl.enable(gl.DEPTH_TEST)
+    gl.depthFunc(gl.LEQUAL)
+    gl.viewport(0.0, 0.0, canvas!.width, canvas!.height)
+    gl.clearColor(0.0, 0.0, 0.0, 1.0)
 }
 
-let start : number | undefined = undefined
-let before: number | undefined = undefined
+let start : number | null = null
+let before: number | null = null
 const animate = (gl: WebGLRenderingContext) => (timestamp: number) => {
     if (!start) {
         start = timestamp
@@ -37,8 +38,5 @@ const animate = (gl: WebGLRenderingContext) => (timestamp: number) => {
 }
 
 const render = (gl: WebGLRenderingContext, total: number, progress: number) => {
-    gl.clearColor(0.0, 0.0, 0.0, 1.0)
-    gl.enable(gl.DEPTH_TEST)
-    gl.depthFunc(gl.LEQUAL)
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 }
