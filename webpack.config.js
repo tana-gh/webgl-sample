@@ -16,6 +16,11 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
+                enforce: 'pre',
+                loader: 'tslint-loader'
+            },
+            {
+                test: /\.ts$/,
                 loader: 'ts-loader'
             },
             {
