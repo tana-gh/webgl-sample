@@ -1,0 +1,17 @@
+{
+  "name": "webgl_sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "sass": "node-sass",
+    "tsc": "tsc --sourcemap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tana",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "typescript": "^2.7.2"
+  }
+}
