@@ -71,14 +71,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/index.js?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./style/style.sass":
-/*!********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./style/style.sass ***!
-  \********************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./sass/style.sass":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./sass/style.sass ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"#container {\\n  display: flex;\\n  justify-content: center; }\\n\", \"\", {\"version\":3,\"sources\":[\"D:/Documents/NodeJsProjects/webgl_sample/style/style.sass\"],\"names\":[],\"mappings\":\"AAAA;EACE,cAAc;EACd,wBAAwB,EAAE\",\"file\":\"style.sass\",\"sourcesContent\":[\"#container {\\n  display: flex;\\n  justify-content: center; }\\n\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./style/style.sass?./node_modules/css-loader?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(true);\n// imports\n\n\n// module\nexports.push([module.i, \"#container {\\n  display: flex;\\n  justify-content: center; }\\n\", \"\", {\"version\":3,\"sources\":[\"D:/Documents/NodeJsProjects/webgl_sample/sass/style.sass\"],\"names\":[],\"mappings\":\"AAAA;EACE,cAAc;EACd,wBAAwB,EAAE\",\"file\":\"style.sass\",\"sourcesContent\":[\"#container {\\n  display: flex;\\n  justify-content: center; }\\n\"],\"sourceRoot\":\"\"}]);\n\n// exports\n\n\n//# sourceURL=webpack:///./sass/style.sass?./node_modules/css-loader?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass");
 
 /***/ }),
 
@@ -138,6 +138,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./sass/style.sass":
+/*!*************************!*\
+  !*** ./sass/style.sass ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader?sourceMap=true!../node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./style.sass */ \"./node_modules/css-loader/index.js?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./sass/style.sass\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./sass/style.sass?");
+
+/***/ }),
+
 /***/ "./src/main.ts":
 /*!*********************!*\
   !*** ./src/main.ts ***!
@@ -146,18 +157,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__webpack_require__(/*! ../style/style */ \"./style/style.sass\");\r\nconst THREE = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\r\nconst OrbitControls = __webpack_require__(/*! three-orbitcontrols */ \"./node_modules/three-orbitcontrols/OrbitControls.js\");\r\nwindow.onload = () => {\r\n    const width = window.innerWidth - 20;\r\n    const height = window.innerHeight - 20;\r\n    const threeObjects = init(width, height);\r\n    window.requestAnimationFrame(animate(threeObjects));\r\n};\r\nfunction init(width, height) {\r\n    const scene = new THREE.Scene();\r\n    const camera = new THREE.PerspectiveCamera(60.0, width / height);\r\n    camera.position.set(0.0, 0.0, 3.0);\r\n    const controls = new OrbitControls(camera);\r\n    const geometry = new THREE.BoxGeometry(1.0, 1.0, 1.0);\r\n    const material = new THREE.MeshPhysicalMaterial({\r\n        color: new THREE.Color(1.0, 1.0, 1.0),\r\n        metalness: 0.5,\r\n        roughness: 0.5,\r\n        clearCoat: 0.5,\r\n        clearCoatRoughness: 0.5,\r\n        reflectivity: 1.0,\r\n        fog: true\r\n    });\r\n    const mesh = new THREE.Mesh(geometry, material);\r\n    scene.add(mesh);\r\n    const lights = [\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.6, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.2, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.1, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.4, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.8, 0.5, 0.8))\r\n    ];\r\n    lights[0].position.set(2.0, 4.0, 2.0);\r\n    lights[1].position.set(-2.0, 4.0, -2.0);\r\n    lights[2].position.set(2.0, 0.0, 2.0);\r\n    lights[3].position.set(-2.0, 0.0, -2.0);\r\n    lights[4].position.set(1.0, -4.0, 1.0);\r\n    lights.forEach(x => scene.add(x));\r\n    const renderer = new THREE.WebGLRenderer({\r\n        alpha: true,\r\n        antialias: true\r\n    });\r\n    renderer.setClearColor(new THREE.Color(0.0, 0.0, 0.0), 1.0);\r\n    renderer.setSize(width, height);\r\n    document.getElementById(\"container\").appendChild(renderer.domElement);\r\n    return {\r\n        scene,\r\n        camera,\r\n        controls,\r\n        renderer\r\n    };\r\n}\r\nlet start = null;\r\nlet before = null;\r\nfunction animate(threeObjects) {\r\n    return (timestamp) => {\r\n        if (!start) {\r\n            start = timestamp;\r\n        }\r\n        if (!before) {\r\n            before = timestamp;\r\n        }\r\n        const total = timestamp - start;\r\n        const progress = timestamp - before;\r\n        before = timestamp;\r\n        render(threeObjects, total, progress);\r\n        window.requestAnimationFrame(animate(threeObjects));\r\n    };\r\n}\r\nfunction render(threeObjects, total, progress) {\r\n    threeObjects.controls.update();\r\n    threeObjects.renderer.render(threeObjects.scene, threeObjects.camera);\r\n}\r\n\n\n//# sourceURL=webpack:///./src/main.ts?");
-
-/***/ }),
-
-/***/ "./style/style.sass":
-/*!**************************!*\
-  !*** ./style/style.sass ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader?sourceMap=true!../node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./style.sass */ \"./node_modules/css-loader/index.js?sourceMap=true!./node_modules/sass-loader/lib/loader.js?indentedSyntax=sass!./style/style.sass\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./style/style.sass?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__webpack_require__(/*! ../sass/style */ \"./sass/style.sass\");\r\nconst THREE = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\r\nconst OrbitControls = __webpack_require__(/*! three-orbitcontrols */ \"./node_modules/three-orbitcontrols/OrbitControls.js\");\r\nwindow.onload = () => {\r\n    const width = window.innerWidth - 20;\r\n    const height = window.innerHeight - 20;\r\n    const threeObjects = init(width, height);\r\n    window.requestAnimationFrame(animate(threeObjects));\r\n};\r\nconst init = (width, height) => {\r\n    const scene = new THREE.Scene();\r\n    const camera = new THREE.PerspectiveCamera(60.0, width / height);\r\n    camera.position.set(0.0, 0.0, 3.0);\r\n    const controls = new OrbitControls(camera);\r\n    const geometry = new THREE.BoxGeometry(1.0, 1.0, 1.0);\r\n    const material = new THREE.MeshPhysicalMaterial({\r\n        color: new THREE.Color(1.0, 1.0, 1.0),\r\n        metalness: 0.5,\r\n        roughness: 0.5,\r\n        clearCoat: 0.5,\r\n        clearCoatRoughness: 0.5,\r\n        reflectivity: 1.0,\r\n        fog: true\r\n    });\r\n    const mesh = new THREE.Mesh(geometry, material);\r\n    scene.add(mesh);\r\n    const lights = [\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.6, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.2, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.1, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.4, 0.5, 0.8)),\r\n        new THREE.PointLight(new THREE.Color().setHSL(0.8, 0.5, 0.8))\r\n    ];\r\n    const poss = [\r\n        [2.0, 4.0, 2.0],\r\n        [-2.0, 4.0, -2.0],\r\n        [2.0, 0.0, 2.0],\r\n        [-2.0, 0.0, -2.0],\r\n        [1.0, -4.0, 1.0]\r\n    ];\r\n    lights.map((x, i) => x.position.set(poss[i][0], poss[i][1], poss[i][2]));\r\n    lights.forEach(x => scene.add(x));\r\n    const renderer = new THREE.WebGLRenderer({\r\n        alpha: true,\r\n        antialias: true\r\n    });\r\n    renderer.setClearColor(new THREE.Color(0.0, 0.0, 0.0), 1.0);\r\n    renderer.setSize(width, height);\r\n    document.getElementById(\"container\").appendChild(renderer.domElement);\r\n    return {\r\n        scene,\r\n        camera,\r\n        controls,\r\n        renderer\r\n    };\r\n};\r\nlet start = null;\r\nlet before = null;\r\nconst animate = (threeObjects) => (timestamp) => {\r\n    if (!start) {\r\n        start = timestamp;\r\n    }\r\n    if (!before) {\r\n        before = timestamp;\r\n    }\r\n    const total = timestamp - start;\r\n    const progress = timestamp - before;\r\n    before = timestamp;\r\n    render(threeObjects, total, progress);\r\n    window.requestAnimationFrame(animate(threeObjects));\r\n};\r\nconst render = (threeObjects, total, progress) => {\r\n    threeObjects.controls.update();\r\n    threeObjects.renderer.render(threeObjects.scene, threeObjects.camera);\r\n};\r\n\n\n//# sourceURL=webpack:///./src/main.ts?");
 
 /***/ })
 

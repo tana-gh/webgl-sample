@@ -4,8 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config ./webpack.config.dev.js"
   },
   "author": "tana",
   "license": "ISC",
@@ -19,8 +18,6 @@
     "three": "^0.91.0",
     "three-orbitcontrols": "^2.0.0",
     "ts-loader": "^4.0.1",
-    "tslint": "^5.9.1",
-    "tslint-loader": "^3.6.0",
     "typescript": "^2.7.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12"
