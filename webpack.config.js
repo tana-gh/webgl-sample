@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = env => {
     const mode = env.dev  ? "development" :
                  env.prod ? "production"  :
-                            ""
+                            "";
     return {
         mode: mode,
         entry: path.resolve(__dirname, "./src/main.ts"),
