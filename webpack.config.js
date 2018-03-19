@@ -1,12 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-    mode: "development",
+module.exports = env => ({
+    mode: env === "dev"  ? "development" :
+          env === "prod" ? "production"  :
+                           "",
     entry: path.resolve(__dirname, "./src/main.ts"),
     output: {
-        path: path.resolve(__dirname, "./dist"),
-        publicPath: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, `./dist/${env}/`),
+        publicPath: path.resolve(__dirname, `./dist/${env}/`),
         filename: "bundle.js"
     },
     resolve: {
@@ -33,4 +35,4 @@ module.exports = {
             template: "./html/index.html"
         })
     ]
-};
+});
