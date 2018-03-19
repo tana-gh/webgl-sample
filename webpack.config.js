@@ -9,7 +9,7 @@ module.exports = env => {
         mode: mode,
         entry: path.resolve(__dirname, "./src/main.ts"),
         output: {
-            path: path.resolve(__dirname, `./dist/${mode}/`),
+            path:       path.resolve(__dirname, `./dist/${mode}/`),
             publicPath: path.resolve(__dirname, `./dist/${mode}/`),
             filename: "bundle.js"
         },
@@ -27,7 +27,7 @@ module.exports = env => {
                     loaders: [
                         "style-loader",
                         "css-loader?sourceMap=true",
-                        "sass-loader?indentedSyntax=sass"
+                        "sass-loader?sourceMap=true&indentedSyntax=sass"
                     ]
                 }
             ]
