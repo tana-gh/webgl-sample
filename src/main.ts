@@ -1,6 +1,6 @@
-import "../sass/style"
-import THREE = require("three")
-import OrbitControls = require("three-orbitcontrols")
+import '../sass/style'
+import THREE = require('three')
+import OrbitControls = require('three-orbitcontrols')
 
 interface IThreeObjects {
     scene   : THREE.Scene
@@ -60,7 +60,7 @@ const init = (width: number, height: number) => {
     })
     renderer.setClearColor(new THREE.Color(0.0, 0.0, 0.0), 1.0)
     renderer.setSize(width, height)
-    document.getElementById("container")!.appendChild(renderer.domElement)
+    document.getElementById('container')!.appendChild(renderer.domElement)
 
     return {
         scene,

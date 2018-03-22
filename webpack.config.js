@@ -1,40 +1,40 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = env => {
-    const mode = env.dev  ? "development" :
-                 env.prod ? "production"  :
-                            ""
+    const mode = env.dev  ? 'development' :
+                 env.prod ? 'production'  :
+                            ''
     return {
         mode: mode,
-        entry: path.resolve(__dirname, "./src/main.ts"),
+        entry: path.resolve(__dirname, './src/main.ts'),
         output: {
             path:       path.resolve(__dirname, `./dist/${mode}/`),
             publicPath: path.resolve(__dirname, `./dist/${mode}/`),
-            filename: "bundle.js"
+            filename: 'bundle.js'
         },
         resolve: {
-            extensions: [".js", ".ts", ".css", ".sass", ".json"]
+            extensions: ['.js', '.ts', '.css', '.sass', '.json']
         },
         module: {
             rules: [
                 {
                     test: /\.ts$/,
-                    loader: "ts-loader"
+                    loader: 'ts-loader'
                 },
                 {
                     test: /\.sass$/,
                     loaders: [
-                        "style-loader",
-                        "css-loader?sourceMap=true",
-                        "sass-loader?sourceMap=true&indentedSyntax=sass"
+                        'style-loader',
+                        'css-loader?sourceMap=true',
+                        'sass-loader?sourceMap=true&indentedSyntax=sass'
                     ]
                 }
             ]
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: "./html/index.html"
+                template: './html/index.html'
             })
         ]
     }
