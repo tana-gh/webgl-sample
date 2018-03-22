@@ -10,7 +10,7 @@ module.exports = env => {
         entry: path.resolve(__dirname, './src/main.ts'),
         output: {
             path:       path.resolve(__dirname, `./dist/${mode}/`),
-            publicPath: path.resolve(__dirname, `./dist/${mode}/`),
+            publicPath: './',
             filename: 'bundle.js'
         },
         resolve: {
